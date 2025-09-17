@@ -210,7 +210,7 @@ footer {
 
 	.product_list_item {
 		width: calc( 16% - 8px );
-		margin-bottom: 0;
+		margin-bottom: 16px;
 	}
 }
 
