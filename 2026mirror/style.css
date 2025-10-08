@@ -1,0 +1,381 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family:
+		Arial,
+		Noto Sans TC,
+		Microsoft JhengHei,
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	font-size: 16px;
+	color: #1E170F;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	color: #1E170F;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+section {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	scroll-margin-top: 96px;
+}
+
+footer {
+	width: 100%;
+	color: #4E4E4E;
+	font-size: 14px;
+	text-align: center;
+	padding: 16px 24px;
+}
+
+
+
+
+
+/*========== Container ==========*/
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+@media (min-width: 1024px)  {
+	.container {
+		min-width: 960px;
+	}
+}
+
+
+
+
+
+/*========== PC & Mobile 顯示設定 ==========*/
+.pc {
+	display: none;
+}
+
+.mobile {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: auto;
+}
+
+@media (min-width: 1024px)  {
+	.pc {
+		display: block;
+	}
+
+	.mobile {
+		display: none;
+	}
+}
+
+
+
+
+
+/*========== Navigation ==========*/
+nav {
+	position: sticky;
+	top: 0;  
+	z-index: 999; 
+}
+
+/* 背景圖片 */
+nav img {
+	width: 100%; 
+	height: auto; 
+	display: block; 
+}
+
+/* 桌機版選單 */
+nav .menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+nav .menu.show {
+	display: flex;
+}
+
+nav .menu li {
+	font-size: 18px;
+	font-weight: 500;
+	padding: 0 8px;
+}
+
+/* 漢堡按鈕 */
+.hamburger {
+	all: unset; 
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 998;
+
+	display: none;
+	cursor: pointer;
+	padding: 8px 10px;
+	border-radius: 8px;
+}
+
+button.hamburger svg {
+	width: 28px;
+	height: 28px;
+}
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+	nav .menu li {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 1025px) {
+	nav {
+		z-index: 999; 
+	}
+
+	nav img {
+		display: none;
+	}
+
+	nav .menu {
+		display: none;
+		position: fixed;
+		top: 60px;
+		right: 12px;
+		left: unset;
+		z-index: 999;
+
+		width: auto; 
+		height: auto;
+		border-radius: 8px;
+		flex-direction: column;
+		gap: 0;
+		background: #fff;
+		padding: 20px 0;
+		box-shadow: -3px 0px 15px rgba(0,0,0,0.1);
+	}
+	
+	nav .menu.show {
+		display: flex;
+	}
+
+	nav .menu li {
+		width: 100%;
+		padding: 0;
+	}
+
+	nav .menu li a {
+		text-align: center;
+		padding: 12px 48px;
+	}
+	
+	.hamburger {
+    	display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+
+
+
+
+/*========== 組合圖片 ==========*/
+.group_LR {
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.group_LR > img {
+	width: 100%;
+}
+
+.group_LR a {
+	width: 100%;
+}
+
+.group_6x1 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.group_6x1 a {
+	width: 50%;
+}
+
+@media (min-width: 1024px)  {
+	.group_LR > img {
+		width: 50%;
+	}
+
+	.group_LR a {
+		width: 50%;
+	}
+
+	.group_6x1 {
+		flex-wrap: nowrap;
+	}
+
+	.group_6x1 a {
+		width: 16.666667%;
+	}
+}
+
+
+
+
+
+/*========== 作品列表 ==========*/
+.product {
+	padding-left: 16px;
+  	padding-right: 16px;
+}
+
+.product_list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.product_list_item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	width: calc( 50% - 8px );
+	padding: 16px;
+	margin-bottom: 32px;
+	border-radius: 8px;
+}
+
+.product_list_item .content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.product_list_item img {
+	width: 100%;
+	border-radius: 4px;
+}
+
+.product_list_item h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 0;
+
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+
+.product_list_item p {
+	color: #4E4E4E;
+	
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+
+@media (min-width: 769px)  {
+	.product_list_item {
+		width: calc( 33% - 8px );
+		margin-bottom: 32px;
+	}
+}
+
+@media (min-width: 1024px)  {
+	.product_list {
+		justify-content: space-between;
+	}
+
+	.product_list_item {
+		width: calc( 16% - 8px );
+		margin-bottom: 16px;
+	}
+}
+
+
+
+
+
+/*========== 右下按鈕 ==========*/
+.btn_right {
+	display: block;
+	width: 48px;
+	position: fixed;
+	right: 12px;
+	bottom: 12px;
+	z-index: 998;
+	transform-origin: center;
+}
+
+.btn_right_list {
+	display:flex;
+	flex-direction: column;
+}
+
+#gotop {
+	border: none; 
+	outline: none;
+	cursor: pointer;  
+}
+
+@media (min-width: 1024px)  {
+	.btn_right {
+		width: 72px;
+		right: 2%;
+		bottom: 4%;
+		z-index: 999;
+	}
+}
+
+@keyframes vote_ani{
+	0%{ transform: scale(1, 1);}
+	50%{transform: scale(1.05, 1.05);}
+	100%{transform: scale(1, 1);}
+}
